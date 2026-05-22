@@ -1,12 +1,24 @@
 import { NextRequest, NextResponse } from "next/server";
 
-/** Routes only accessible when the user's active role is "seller". */
-const SELLER_ONLY = ["/store", "/listings", "/analytics", "/new-listing"];
+/**
+ * Routes only accessible when the user's active role is "seller".
+ * Accessing these as a buyer redirects to /unauthorized with a switch prompt.
+ */
+const SELLER_ONLY = [
+  "/store",
+  "/listings",
+  "/analytics",
+  "/new-listing",
+  "/offers",
+];
 
-/** Routes only accessible when the user's active role is "buyer". */
-// Currently none — sellers can also browse buyer pages.
-// Add paths here if that changes (e.g. "/buyer-only-feature").
-const BUYER_ONLY: string[] = [];
+/**
+ * Routes only accessible when the user's active role is "buyer".
+ * Sellers can still browse these by switching modes.
+ */
+const BUYER_ONLY: string[] = [
+  // "/saved",  // uncomment if saved items should be buyer-only
+];
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
@@ -54,5 +66,6 @@ export const config = {
     "/listings/:path*",
     "/analytics/:path*",
     "/new-listing/:path*",
+    "/offers/:path*",
   ],
 };

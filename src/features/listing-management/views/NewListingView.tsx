@@ -33,7 +33,7 @@ export function NewListingView() {
   return (
     <div className="min-h-screen bg-neutral-50">
       {/* Custom header */}
-      <header className="h-14 bg-white border-b border-neutral-200 px-6 flex items-center justify-between sticky top-0 z-40">
+      <header className="h-14 bg-white border-b border-neutral-200 px-4 sm:px-6 flex items-center justify-between sticky top-0 z-40">
         <div className="flex items-center gap-2">
           <span className="w-6 h-6 grid grid-cols-2 grid-rows-2 gap-[2px]" aria-hidden="true">
             <span className="bg-primary-600 rounded-[2px]" />
@@ -54,6 +54,18 @@ export function NewListingView() {
       </header>
 
       <div className="max-w-[1100px] mx-auto px-6 py-10">
+        {/* Back button — sole item in its row */}
+        <div className="mb-6">
+          <button
+            onClick={() => window.history.back()}
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-500 hover:text-neutral-900 transition-colors cursor-pointer"
+            aria-label="Go back"
+          >
+            <ChevronLeft className="w-4 h-4" />
+            Back
+          </button>
+        </div>
+
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-neutral-900 tracking-[-0.5px]">List a new item</h1>
           <p className="text-sm text-neutral-500 mt-1">Create a listing that buyers trust. Each step takes about a minute.</p>

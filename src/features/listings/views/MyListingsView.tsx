@@ -136,8 +136,8 @@ export function MyListingsView() {
       </div>
 
       {/* Table */}
-      <div className="bg-white border border-neutral-200 rounded-xl overflow-hidden">
-        <table className="w-full text-left">
+      <div className="bg-white border border-neutral-200 rounded-xl overflow-x-auto">
+        <table className="min-w-full text-left">
           <thead>
             <tr className="border-b border-neutral-200 bg-neutral-50/50">
               {["IMAGE", "ITEM", "PRICE", "STATUS", "PERFORMANCE", "ACTIONS"].map((h) => (

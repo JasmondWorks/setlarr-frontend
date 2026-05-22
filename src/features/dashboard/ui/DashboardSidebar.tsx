@@ -5,8 +5,8 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Button } from "@/shared/ui/base/Button";
 import {
-  Home, Compass, ShoppingBag, Heart, Wallet,
-  LayoutDashboard, ListPlus, List, BarChart3,
+  Home, Compass, ShoppingBag, Heart, Wallet, MessageCircle,
+  LayoutDashboard, ListPlus, List, BarChart3, Zap,
   User, Settings, HelpCircle, LogOut,
   Tag, Sparkles, ShieldCheck, ChevronRight,
 } from "lucide-react";
@@ -28,19 +28,21 @@ interface SidebarProps {
 }
 
 const buyingLinks: NavLink[] = [
-  { label: "Home", icon: Home, href: "/dashboard" },
-  { label: "Explore", icon: Compass, href: "/explore" },
-  { label: "Orders", icon: ShoppingBag, href: "/orders", badge: "3" },
-  { label: "Saved", icon: Heart, href: "/saved", badge: "12" },
-  { label: "Wallet", icon: Wallet, href: "/wallet", dot: true },
+  { label: "Home",     icon: Home,           href: "/dashboard" },
+  { label: "Explore",  icon: Compass,        href: "/explore" },
+  { label: "Orders",   icon: ShoppingBag,    href: "/orders",   badge: "3" },
+  { label: "Saved",    icon: Heart,          href: "/saved",    badge: "12" },
+  { label: "Messages", icon: MessageCircle,  href: "/messages", badge: "2" },
+  { label: "Wallet",   icon: Wallet,         href: "/wallet",   dot: true },
 ];
 
 const sellingLinks: NavLink[] = [
-  { label: "Dashboard", icon: LayoutDashboard, href: "/store" },
-  { label: "My listings", icon: List, href: "/listings", badge: "14" },
-  { label: "List new item", icon: ListPlus, href: "/new-listing", special: true },
-  { label: "Orders", icon: ShoppingBag, href: "/store/orders", badge: "2" },
-  { label: "Analytics", icon: BarChart3, href: "/analytics" },
+  { label: "Dashboard",    icon: LayoutDashboard, href: "/store" },
+  { label: "My listings",  icon: List,            href: "/listings",    badge: "14" },
+  { label: "List new item",icon: ListPlus,        href: "/new-listing", special: true },
+  { label: "Offers",       icon: Zap,             href: "/offers",      badge: "8" },
+  { label: "Orders",       icon: ShoppingBag,     href: "/store/orders",badge: "2" },
+  { label: "Analytics",    icon: BarChart3,       href: "/analytics" },
 ];
 
 const accountLinks: NavLink[] = [

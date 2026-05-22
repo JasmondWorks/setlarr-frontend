@@ -26,7 +26,7 @@ export function Table<T>({ columns, data, pagination, emptyState, className }: T
     <div className="w-full flex flex-col gap-4">
       {/* Scrollable Container */}
       <div className="w-full overflow-x-auto rounded-[12px] border border-neutral-200/60 bg-white shadow-sm">
-        <table className={cn("w-full border-collapse text-left text-[14px]", className)}>
+        <table className={cn("min-w-full border-collapse text-left text-[14px]", className)}>
           <thead>
             <tr className="border-b border-neutral-200 bg-neutral-50/50">
               {columns.map((col, idx) => (
